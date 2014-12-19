@@ -1,5 +1,5 @@
 ###Robots project
 
-![Banner](banner.jpg "App Manager")
+![Banner](banner.png "Robots")
 
 Under construction =).
