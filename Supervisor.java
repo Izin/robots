@@ -29,14 +29,14 @@ public class Supervisor {
       w.map[y][x].setRobot(r);
       r.setPosition(x, y);
       System.out.print(" case disponible");
-      if (method == "dropJewels") {
-        System.out.print(" -> pollution");
-        w.map[y][x].setState(1);
+      switch (method) {
+        case "dropJewels" : r.dropJewels(x, y, w);  break;
+        case "stealJewels": r.stealJewels(x, y, w); break;
+        default           :                         break;
       }
-      System.out.print(" -> ok.");
       System.out.println("");
     } else {
-      System.out.print(" case indisponible -> erreur.");
+      System.out.print(" case indisponible");
       System.out.println("");
     }
   }
@@ -75,13 +75,14 @@ public class Supervisor {
     Supervisor cortana = new Supervisor("Cortana");
 
       // World
-      World w1 = new World(7, 7);
+      World w1 = new World(5, 3);
 
       // Robots
       List<Robot> robots = new ArrayList<Robot>();
       robots.add(new Jeweler("r1", "potato", 0, 0));
-      robots.add(new Jeweler("r2", "MichelMichel", 0, 1));
-      robots.add(new Jeweler("r3", "banana", 0, 2));
+      robots.add(new Thief("r2", "MichelMichel", 0, 1));
+      robots.add(new Thief("r3", "banana", 0, 2));
+
 
       // Starting a new game
       cortana.newGame(robots, w1);
@@ -94,6 +95,14 @@ public class Supervisor {
         cortana.displayWorld(w1);
 
         // Round 2
+        cortana.nextRound(w1);
+        cortana.displayWorld(w1);
+
+        // Round 3
+        cortana.nextRound(w1);
+        cortana.displayWorld(w1);
+
+        // Round 4
         cortana.nextRound(w1);
         cortana.displayWorld(w1);
   }

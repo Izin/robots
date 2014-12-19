@@ -49,6 +49,7 @@ public class World {
     System.out.println("--" + _repeat("----", this.width));
   }
 
-  public int getWidth() { return this.width; }
+  public int getWidth()   { return this.width;  }
+  public int getHeight()  { return this.height; }
 
 }
