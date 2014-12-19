@@ -12,7 +12,7 @@ public class Timer extends Thread {
 
   // Methods
   public void start(World w) {
-    run(w);
+    this.run(w);
   }
 
   public void run(World w) {

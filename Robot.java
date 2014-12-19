@@ -3,26 +3,24 @@ public abstract class Robot {
   // Attributes
   protected String ref;
   protected String name;
-  protected int x;
-  protected int y;
+  protected int x = 0;
+  protected int y = 0;
 
   // Constructor
-  public Robot(String ref, String name, int x, int y) {
+  public Robot(String ref, String name) {
     this.ref  = ref;
     this.name = name;
-    this.setPosition(x, y);
   }
 
   // Accessors
-  public void move(Controller c, World w) {
+  public void setPosition(int x, int y, World w) {
+    this.x = w.isCoord(x, w.getWidth())  ? x : this.x;
+    this.y = w.isCoord(x, w.getHeight()) ? y : this.y;
   }
 
-  public void setPosition(int x, int y) {
-    this.x = x;
-    this.y = y;
-  }
-
+  public void move(Controller c, World w) {}
   public void use(int x, int y, World w) {}
+  public void setDirection() {}
 
   public int getX()         { return this.x;    }
   public int getY()         { return this.y;    }

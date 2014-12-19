@@ -9,7 +9,7 @@ public class World {
   // Contructor
   public World(int width, int height) {
     generateMap(width, height);
-    //System.out.println("Création du monde (" + width + "x" + height + ")");
+    System.out.println("Création du monde (" + width + "x" + height + ")");
   }
 
   public void generateMap(int width, int height) {
@@ -47,7 +47,14 @@ public class World {
       System.out.println("");
     }
     System.out.println("--" + _repeat("----", this.width));
-    System.out.println("");
+  }
+
+  public boolean isCell(int x, int y) {
+    return (isCoord(x, this.width) && isCoord(y, this.height));
+  }
+
+  public boolean isCoord(int n, int max) {
+    return (n > -1 && n < max);
   }
 
   public int getWidth()   { return this.width;  }

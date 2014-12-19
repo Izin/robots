@@ -1,18 +1,14 @@
-import java.util.Random;
-
 public class JewelerJumper extends Jeweler {
 
   // Constructor
-  public JewelerJumper(String ref, String name, int x, int y) {
-    super(ref, name, x, y);
-    //System.out.println("Création du robot bijoutier " + name + " (" + ref + ")");
+  public JewelerJumper(String ref, String name) {
+    super(ref, name);
+    System.out.println("Création du robot bijoutier sauteur " + name + " (" + ref + ")");
   }
 
   @Override public void move(Controller c, World w) {
-    Random random1 = new Random();
-    Random random2 = new Random();
-    int x          = random1.nextInt(w.getWidth());
-    int y          = random2.nextInt(w.getHeight());
+    int x = (int) Math.abs(Math.random() * w.getWidth());
+    int y = (int) Math.abs(Math.random() * w.getHeight());
     c.moveRobot(x, y, this, w);
   }
 

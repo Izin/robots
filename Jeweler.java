@@ -1,8 +1,8 @@
 public class Jeweler extends Robot {
 
   // Constructor
-  public Jeweler(String ref, String name, int x, int y) {
-    super(ref, name, x, y);
+  public Jeweler(String ref, String name) {
+    super(ref, name);
   }
 
   public void dropJewels(int x, int y, World w) {
@@ -15,5 +15,7 @@ public class Jeweler extends Robot {
   @Override public void use(int x, int y, World w) {
     this.dropJewels(x, y, w);
   }
+
+  public void changeDirection() {}
 
 }
