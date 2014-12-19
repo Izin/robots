@@ -20,18 +20,17 @@ public abstract class Robot {
     return this.getRef() + " | " + this.getName();
   }
 
-  public void setPosition(int x, int y) {
-    this.x = x;
-    this.y = y;
-  }
-
   public void move(Supervisor s, World w) {
     Random random1 = new Random();
     Random random2 = new Random();
     int x          = random1.nextInt(w.getWidth());
     int y          = random2.nextInt(w.getWidth());
+    s.moveRobot(x, y, "", this, w);
+  }
 
-    s.moveRobot(x, y, this);
+  public void setPosition(int x, int y) {
+    this.x = x;
+    this.y = y;
   }
 
   public int getX()         { return this.x;    }

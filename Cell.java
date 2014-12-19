@@ -21,12 +21,16 @@ public class Cell {
     this.robot = null;
   }
 
-  public void addRobot(Robot robot) {
-    //robot.setPosition(x, y);
-    this.robot = robot;
+  public String show() {
+    String content = this.state == 1 ? "$£" : "--";
+    return !this.isFree() ? this.robot.getRef() : content;
   }
 
-  public String show() {
-    return !this.isFree() ? this.robot.getRef() : "--";
+  public void setRobot(Robot robot) {
+    this.robot = robot instanceof Robot ? robot : null;
+  }
+
+  public void setState(int state) {
+    this.state = state;
   }
 }

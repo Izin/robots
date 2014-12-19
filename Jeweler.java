@@ -1,21 +1,21 @@
-// @todo robot pollueur (laisse tomber des pièces, diamants et billets sur la case)
-// @todo passer en paramètre le Supervisor, faire un getWorld() pour utiliser
-// la propriété Supervisor.world
 import java.util.Random;
+import java.lang.reflect.Method;
 
 public class Jeweler extends Robot {
 
   // Constructor
-  public Jeweler(String ref, String name) {
+  public Jeweler(String ref, String name, int x, int y) {
     super(ref, name);
+    this.x = x;
+    this.y = y;
   }
 
-  public void move(Supervisor s, World w) {
+  @Override public void move(Supervisor s, World w) {
     Random random1 = new Random();
     Random random2 = new Random();
     int x          = random1.nextInt(w.getWidth());
     int y          = random2.nextInt(w.getWidth());
-    s.moveRobot(x, y, this);
+    s.moveRobot(x, y, "dropJewels", this, w);
   }
 
 }
