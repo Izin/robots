@@ -1,12 +1,11 @@
 public class Cell {
 
   // Attributes
-  private int state;
-  private Robot robot;
+  private int state   = 0;
+  private Robot robot = null;
 
   // Contructor
-  public Cell(int state) {
-    this.state = 0;
+  public Cell() {
   }
 
   // Accessors
@@ -14,8 +13,20 @@ public class Cell {
     return this.state == 0;
   }
 
-  private boolean _isFree() {
-    return this.robot !instanceof Robot;
+  public boolean isFree() {
+    return this.robot instanceof Robot == false;
   }
 
+  public void release() {
+    this.robot = null;
+  }
+
+  public void addRobot(Robot robot) {
+    //robot.setPosition(x, y);
+    this.robot = robot;
+  }
+
+  public String show() {
+    return !this.isFree() ? this.robot.getRef() : "--";
+  }
 }

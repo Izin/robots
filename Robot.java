@@ -1,20 +1,42 @@
+import java.util.Random;
+
 public abstract class Robot {
 
   // Attributes
-  protected int id;
-  protected int x;
-  protected int y;
+  protected String ref;
+  protected String name;
+  protected int x = 0;
+  protected int y = 0;
 
   // Constructor
-  public Robot(int id, int x, int y) {
-    this.id = id;
-    this.x  = x;
-    this.y  = y;
+  public Robot(String ref, String name) {
+    this.ref  = ref;
+    this.name = name;
+    System.out.println("Création du robot " + name + " (#" + ref + ")");
   }
 
   // Accessors
-  public void move(int x, int y, World map) {
-    map.moveRobot(x, y);
+  public String show() {
+    return this.getRef() + " | " + this.getName();
   }
+
+  public void setPosition(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  public void move(Supervisor s, World w) {
+    Random random1 = new Random();
+    Random random2 = new Random();
+    int x          = random1.nextInt(w.getWidth());
+    int y          = random2.nextInt(w.getWidth());
+
+    s.moveRobot(x, y, this);
+  }
+
+  public int getX()         { return this.x;    }
+  public int getY()         { return this.y;    }
+  public String getRef()    { return this.ref;  }
+  public String getName()   { return this.name; }
 
 }
