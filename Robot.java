@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public abstract class Robot {
 
   // Attributes
@@ -16,12 +14,7 @@ public abstract class Robot {
   }
 
   // Accessors
-  public String show() {
-    return this.getRef() + " | " + this.getName();
-  }
-
-  public void move(Supervisor s, World w) {
-    s.moveRobot(x, y, "", this, w);
+  public void move(Controller c, World w) {
   }
 
   public void setPosition(int x, int y) {
@@ -29,11 +22,7 @@ public abstract class Robot {
     this.y = y;
   }
 
-  public void dropJewels(int x, int y, World w) {
-  }
-
-  public void stealJewels(int x, int y, World w) {
-  }
+  public void use(int x, int y, World w) {}
 
   public int getX()         { return this.x;    }
   public int getY()         { return this.y;    }

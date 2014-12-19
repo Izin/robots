@@ -2,12 +2,12 @@ public class Timer extends Thread {
 
   // Attributes
   private int step = 500;
-  private Supervisor controller;
+  private Controller controller;
 
   // Constructor
-  public Timer(int step, Supervisor s) {
+  public Timer(int step, Controller c) {
     this.step       = step;
-    this.controller = s;
+    this.controller = c;
   }
 
   // Methods

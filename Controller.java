@@ -1,20 +1,20 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Supervisor {
+public class Controller {
 
   // Attributes
   private String name;
   private List<Robot> robots = new ArrayList<Robot>();
 
   // Contructor
-  public Supervisor(String name) {
+  public Controller(String name) {
     this.name  = name;
     //System.out.println("Création du superviseur " + name);
   }
 
   // Accessors
-  public void newGame(List<Robot> robots, World w) {
+  public void initGame(List<Robot> robots, World w) {
     setRobots(robots, w);
   }
 
@@ -22,18 +22,14 @@ public class Supervisor {
     w.display();
   }
 
-  public void moveRobot(int x, int y, String method, Robot r, World w) {
+  public void moveRobot(int x, int y, Robot r, World w) {
     //System.out.print("Tentative de déplacement de " + r.getName() + " en case [" + x + ", " + y + "] ->");
     if (w.map[y][x].isFree()) {
       w.map[r.getY()][r.getX()].release();
       w.map[y][x].setRobot(r);
       r.setPosition(x, y);
       //System.out.print(" case disponible");
-      switch (method) {
-        case "dropJewels" : r.dropJewels(x, y, w);  break;
-        case "stealJewels": r.stealJewels(x, y, w); break;
-        default           :                         break;
-      }
+      r.use(x, y, w);
       //System.out.println("");
     } else {
       //System.out.print(" case indisponible");
@@ -72,29 +68,16 @@ public class Supervisor {
   }
 
   public static void main(String[] args) {
-    // Supervisor
-    Supervisor cortana = new Supervisor("Cortana");
+    Controller c1      = new Controller("Cortana");
+    World w1           = new World(7, 7);
+    Timer t1           = new Timer(750, c1);
+    List<Robot> robots = new ArrayList<Robot>();
+                         robots.add(new JewelerMadman("r1", "potato", 0, 0));
+                         robots.add(new ThiefExpert("r2", "MichelMichel", 0, 1));
+                         robots.add(new ThiefDrunked("r3", "banana", 0, 2));
 
-      // World
-      World w1 = new World(10, 10);
-
-      // Timer
-      Timer t1 = new Timer(1000, cortana);
-
-      // Robots
-      List<Robot> robots = new ArrayList<Robot>();
-      robots.add(new Jeweler("r1", "potato", 0, 0));
-      robots.add(new Thief("r2", "MichelMichel", 0, 1));
-      robots.add(new Thief("r3", "banana", 0, 2));
-
-
-      // Starting a new game
-      cortana.newGame(robots, w1);
-
-        // Début du thread
-        t1.start(w1);
+    c1.initGame(robots, w1);
+    t1.start(w1);
   }
-
-
 
 }
