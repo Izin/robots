@@ -9,8 +9,8 @@ public class Supervisor {
 
   // Contructor
   public Supervisor(String name) {
-    this.name = name;
-    System.out.println("Création du superviseur " + name);
+    this.name  = name;
+    //System.out.println("Création du superviseur " + name);
   }
 
   // Accessors
@@ -23,29 +23,29 @@ public class Supervisor {
   }
 
   public void moveRobot(int x, int y, String method, Robot r, World w) {
-    System.out.print("Tentative de déplacement de " + r.getName() + " en case [" + x + ", " + y + "] ->");
+    //System.out.print("Tentative de déplacement de " + r.getName() + " en case [" + x + ", " + y + "] ->");
     if (w.map[y][x].isFree()) {
       w.map[r.getY()][r.getX()].release();
       w.map[y][x].setRobot(r);
       r.setPosition(x, y);
-      System.out.print(" case disponible");
+      //System.out.print(" case disponible");
       switch (method) {
         case "dropJewels" : r.dropJewels(x, y, w);  break;
         case "stealJewels": r.stealJewels(x, y, w); break;
         default           :                         break;
       }
-      System.out.println("");
+      //System.out.println("");
     } else {
-      System.out.print(" case indisponible");
-      System.out.println("");
+      //System.out.print(" case indisponible");
+      //System.out.println("");
     }
   }
 
   public void nextRound(World w) {
+    //System.out.println("Nouveau tour...");
     for (Robot r : this.robots) {
       r.move(this, w);
     }
-    System.out.println("Nouveau tour...");
   }
 
   public void setRobots(List<Robot> robots, World w) {
@@ -66,16 +66,20 @@ public class Supervisor {
     w.map[r.getY()][r.getX()].setRobot(r);
   }
 
-
-
-
+  public void update(World w) {
+    this.nextRound(w);
+    this.displayWorld(w);
+  }
 
   public static void main(String[] args) {
     // Supervisor
     Supervisor cortana = new Supervisor("Cortana");
 
       // World
-      World w1 = new World(5, 3);
+      World w1 = new World(10, 10);
+
+      // Timer
+      Timer t1 = new Timer(1000, cortana);
 
       // Robots
       List<Robot> robots = new ArrayList<Robot>();
@@ -87,24 +91,8 @@ public class Supervisor {
       // Starting a new game
       cortana.newGame(robots, w1);
 
-        // Round 0 (default)
-        cortana.displayWorld(w1);
-
-        // Round 1
-        cortana.nextRound(w1);
-        cortana.displayWorld(w1);
-
-        // Round 2
-        cortana.nextRound(w1);
-        cortana.displayWorld(w1);
-
-        // Round 3
-        cortana.nextRound(w1);
-        cortana.displayWorld(w1);
-
-        // Round 4
-        cortana.nextRound(w1);
-        cortana.displayWorld(w1);
+        // Début du thread
+        t1.start(w1);
   }
 
 

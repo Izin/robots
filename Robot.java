@@ -5,15 +5,14 @@ public abstract class Robot {
   // Attributes
   protected String ref;
   protected String name;
-  protected int x = 0;
-  protected int y = 0;
+  protected int x;
+  protected int y;
 
   // Constructor
   public Robot(String ref, String name, int x, int y) {
     this.ref  = ref;
     this.name = name;
-    this.x    = x;
-    this.y    = y;
+    this.setPosition(x, y);
   }
 
   // Accessors

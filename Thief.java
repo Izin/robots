@@ -8,7 +8,7 @@ public class Thief extends Robot {
   // Constructor
   public Thief(String ref, String name, int x, int y) {
     super(ref, name, x, y);
-    System.out.println("Création du robot voleur " + name + " (" + ref + ")");
+    //System.out.println("Création du robot voleur " + name + " (" + ref + ")");
   }
 
   @Override public void move(Supervisor s, World w) {
@@ -22,9 +22,9 @@ public class Thief extends Robot {
   @Override public void stealJewels(int x, int y, World w) {
     if (w.map[y][x].getState() == 1) {
       w.map[y][x].setState(0);
-      System.out.print(" -> vole les bijoux");
+      //System.out.print(" -> vole les bijoux");
     } else {
-      System.out.print(" -> rien à voler");
+      //System.out.print(" -> rien à voler");
     }
   }
 
