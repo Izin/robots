@@ -22,7 +22,7 @@ public class Cell {
   }
 
   public String show() {
-    String content = this.state == 1 ? " $" : "  ";
+    String content = this.state == 1 ? " $" : "--";
     return !this.isFree() ? this.robot.getRef() : content;
   }
 

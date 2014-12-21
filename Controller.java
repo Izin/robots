@@ -42,8 +42,8 @@ public class Controller {
       //System.out.println("");
       if (r instanceof JewelerMadman) {
         r.setDirection();
-        r.move(this, w);
       }
+      r.move(this, w);
       //System.out.println("");
     }
     //System.out.println("");
@@ -69,8 +69,8 @@ public class Controller {
 
   public static void main(String[] args) {
     Controller c1      = new Controller();
-    World w1           = new World(5, 5);
-    Timer t1           = new Timer(750, c1);
+    World w1           = new World(10, 10);
+    Timer t1           = new Timer(1000, c1);
     List<Robot> robots = new ArrayList<Robot>();
                 robots.add(new JewelerMadman("J1", "potato"));
                 robots.add(new JewelerJumper("J2", "banana"));
