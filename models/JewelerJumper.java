@@ -1,3 +1,7 @@
+package models;
+
+import controllers.*;
+
 public class JewelerJumper extends Jeweler {
 
   // Constructor

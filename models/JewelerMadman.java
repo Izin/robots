@@ -1,3 +1,7 @@
+package models;
+
+import controllers.*;
+
 public class JewelerMadman extends Jeweler {
 
   // Attributes

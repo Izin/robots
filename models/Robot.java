@@ -1,3 +1,7 @@
+package models;
+
+import controllers.*;
+
 public abstract class Robot {
 
   // Attributes

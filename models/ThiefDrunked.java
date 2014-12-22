@@ -1,3 +1,5 @@
+package models;
+
 public class ThiefDrunked extends Thief {
 
   // Attributes
