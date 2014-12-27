@@ -1,9 +1,9 @@
-package models;
+package org.models;
 
 public class ThiefDrunked extends Thief {
 
   // Attributes
-  private boolean steal = true;
+  private boolean stolen = true;
 
   // Constructor
   public ThiefDrunked(String ref, String name) {
@@ -13,12 +13,13 @@ public class ThiefDrunked extends Thief {
 
   @Override public void stealJewels(int x, int y, World w) {
     if (w.map[y][x].getState() == 1) {
-      if (this.steal) {
+      if (this.stolen) {
         w.map[y][x].setState(0);
-        this.steal = false;
+        w.map[y][x].steal();
+        this.stolen = false;
         //System.out.println(" -> vole les bijoux");
       } else {
-        this.steal = true;
+        this.stolen = true;
         //System.out.println(" -> ne vole pas les bijoux");
       }
     } else {

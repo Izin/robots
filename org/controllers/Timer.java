@@ -1,17 +1,18 @@
-package controllers;
+package org.controllers;
 
-import models.*;
+import org.models.*;
 
 public class Timer extends Thread {
 
   // Attributes
-  private int step = 500;
+  private int speed;
   private Controller controller;
 
   // Constructor
-  public Timer(int step, Controller c) {
-    this.step       = step;
+  public Timer(int speed, Controller c) {
+    this.speed      = speed;
     this.controller = c;
+    System.out.println("Création du timer (" + this.speed + "ms)");
   }
 
   // Methods
@@ -23,7 +24,7 @@ public class Timer extends Thread {
     while(true) {
       try {
         this.controller.update(w);
-        Thread.sleep(this.step);
+        Thread.sleep(this.speed);
       } catch(InterruptedException e) {
         Thread.currentThread().interrupt();
       }

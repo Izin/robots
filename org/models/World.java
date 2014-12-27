@@ -1,4 +1,4 @@
-package models;
+package org.models;
 
 public class World {
 

@@ -1,6 +1,6 @@
-package models;
+package org.models;
 
-import controllers.*;
+import org.controllers.*;
 
 public class JewelerMadman extends Jeweler {
 

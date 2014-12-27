@@ -1,16 +1,21 @@
+import org.controllers.*;
+import org.models.*;
+import org.views.*;
 import java.util.ArrayList;
-
-import controllers.*;
-import models.*;
-//import views.*;
 
 public class App {
 
   public static void main(String[] args) {
 
-    Controller c1      = new Controller();
-    World w1           = new World(10, 10);
-    Timer t1           = new Timer(1000, c1);
+    int width  = args.length == 0 ? 10   : Integer.parseInt(args[0]);
+    int height = args.length <= 1 ? 10   : Integer.parseInt(args[1]);
+    int speed  = args.length <= 2 ? 1000 : Integer.parseInt(args[2]);
+
+    Controller c1 = new Controller();
+    World      w1 = new World(width, height);
+    Timer      t1 = new Timer(speed, c1);
+    SPanel     p1 = new SPanel();
+    SWindow   win = new SWindow("iRobots", w1.getWidth(), w1.getHeight(), p1);
 
     ArrayList<Robot> robots = new ArrayList<Robot>();
                      robots.add(new JewelerMadman("J1", "potato"));

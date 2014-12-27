@@ -1,7 +1,6 @@
-package controllers;
+package org.controllers;
 
-import models.*;
-
+import org.models.*;
 import java.util.ArrayList;
 
 public class Controller {
@@ -15,11 +14,14 @@ public class Controller {
   }
 
   // Accessors
-  public void update(World w) {
+  public void update(World w/*, SWindow sw, Panel p1*/) {
     for (Robot r : this.robots) {
       r.move(this, w);
     }
     w.display();
+/*    sw.setVisible(false);
+    sw.setContentPane(p1);
+    sw.setVisible(true);*/
   }
 
   public void initGame(ArrayList<Robot> robots, World w) {
@@ -34,7 +36,8 @@ public class Controller {
         w.map[y][x].setRobot(r);
         r.setPosition(x, y, w);
         //System.out.print(" case disponible");
-        r.use(x, y, w);
+        Jewel j = w.map[y][x].getJewel();
+        r.use(x, y, j, w);
         //System.out.println("");
       } else {
         //System.out.print(" case indisponible");
