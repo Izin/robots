@@ -3,6 +3,8 @@ package org.models;
 public class Jeweler extends Robot {
 
   // Constructor
+  public Jeweler() {}
+
   public Jeweler(String ref, String name) {
     super(ref, name);
     this.image = "jeweler";

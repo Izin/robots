@@ -8,8 +8,7 @@ public class Jewel {
   protected String image = "jewel";
 
   // Constructor
-  public Jewel() {
-  }
+  public Jewel() {}
 
   // Accessors
   public String getImage()  { return this.image; }

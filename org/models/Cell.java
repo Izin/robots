@@ -9,8 +9,7 @@ public class Cell {
   private String image = "cell";
 
   // Contructor
-  public Cell() {
-  }
+  public Cell() {}
 
   // Accessors
   private boolean _isClean() {

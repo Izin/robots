@@ -3,12 +3,13 @@ package org.models;
 public class World {
 
   // Attributes
-  public Cell[][] map;
+  public Cell[][] map; // todo WOULALA horrible ! remplacer par un getWorld!
   private int width;
   private int height;
   //static nbRobots
 
   // Contructor
+  public World() {}
   public World(int width, int height) {
     generateMap(width, height);
     System.out.println("Création du monde (" + width + "x" + height + ")");

@@ -5,6 +5,7 @@ public class ThiefExpert extends Thief {
   // Attributes
 
   // Constructor
+  public ThiefExpert() {}
   public ThiefExpert(String ref, String name) {
     super(ref, name);
     System.out.println("Création du robot voleur expert " + name + " (" + ref + ")");

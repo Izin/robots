@@ -5,6 +5,8 @@ import org.controllers.*;
 public class JewelerJumper extends Jeweler {
 
   // Constructor
+  public JewelerJumper() {}
+
   public JewelerJumper(String ref, String name) {
     super(ref, name);
     System.out.println("Création du robot bijoutier sauteur " + name + " (" + ref + ")");
@@ -25,7 +27,7 @@ public class JewelerJumper extends Jeweler {
       case 6 : x -= 2; y++;    break; // left-bottom
       default: x -= 2; y -= 2; break; // left-top
     }
-    c.moveRobot(x, y, this, w);
+    c.moveIfPossible(x, y, this, w);
   }
 
 }

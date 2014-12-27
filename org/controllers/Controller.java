@@ -1,6 +1,8 @@
 package org.controllers;
 
 import org.models.*;
+import org.views.*;
+
 import java.util.ArrayList;
 
 public class Controller {
@@ -14,21 +16,19 @@ public class Controller {
   }
 
   // Accessors
-  public void update(World w/*, SWindow sw, Panel p1*/) {
+  public void update(World w, Grid g) {
     for (Robot r : this.robots) {
+      // todo appeler moveIfPossible, plus logique !
       r.move(this, w);
     }
-    w.display();
-/*    sw.setVisible(false);
-    sw.setContentPane(p1);
-    sw.setVisible(true);*/
+    g.repaint();
   }
 
   public void initGame(ArrayList<Robot> robots, World w) {
     setRobots(robots, w);
   }
 
-  public void moveRobot(int x, int y, Robot r, World w) {
+  public void moveIfPossible(int x, int y, Robot r, World w) {
     //System.out.print("Tentative de déplacement de " + r.getName() + " en case [" + x + ", " + y + "] ->");
     if (w.isCell(x, y)) {
       if (w.map[y][x].isFree()) {

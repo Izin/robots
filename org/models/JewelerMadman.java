@@ -8,6 +8,8 @@ public class JewelerMadman extends Jeweler {
   private int direction = 0;
 
   // Constructor
+  public JewelerMadman() {}
+
   public JewelerMadman(String ref, String name) {
     super(ref, name);
     System.out.println("Création du robot bijoutier fou " + name + " (" + ref + ")");
@@ -24,7 +26,7 @@ public class JewelerMadman extends Jeweler {
       case 2 : y++; break; // bottom
       default: x--; break; // left
     }
-    c.moveRobot(x, y, this, w);
+    c.moveIfPossible(x, y, this, w);
   }
 
   @Override public void setDirection() {

@@ -6,6 +6,7 @@ public class ThiefDrunked extends Thief {
   private boolean stolen = true;
 
   // Constructor
+  public ThiefDrunked() {}
   public ThiefDrunked(String ref, String name) {
     super(ref, name);
     System.out.println("Création du robot voleur saoul " + name + " (" + ref + ")");

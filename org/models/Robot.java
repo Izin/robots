@@ -12,6 +12,7 @@ public abstract class Robot {
   protected String image = "robot";
 
   // Constructor
+  public Robot() {}
   public Robot(String ref, String name) {
     this.ref  = ref;
     this.name = name;

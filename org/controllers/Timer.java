@@ -1,17 +1,21 @@
 package org.controllers;
 
 import org.models.*;
+import org.views.*;
 
 public class Timer extends Thread {
 
   // Attributes
   private int speed;
-  private Controller controller;
+  private Controller ctrl;
+  private Grid g;
 
-  // Constructor
-  public Timer(int speed, Controller c) {
-    this.speed      = speed;
-    this.controller = c;
+  public Timer() {}
+
+  public Timer(int speed, Controller c, Grid g) {
+    this.speed = speed;
+    this.ctrl  = c;
+    this.g     = g;
     System.out.println("Création du timer (" + this.speed + "ms)");
   }
 
@@ -23,7 +27,7 @@ public class Timer extends Thread {
   public void run(World w) {
     while(true) {
       try {
-        this.controller.update(w);
+        this.ctrl.update(w, g);
         Thread.sleep(this.speed);
       } catch(InterruptedException e) {
         Thread.currentThread().interrupt();
