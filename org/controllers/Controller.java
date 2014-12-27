@@ -36,8 +36,7 @@ public class Controller {
         w.map[y][x].setRobot(r);
         r.setPosition(x, y, w);
         //System.out.print(" case disponible");
-        Jewel j = w.map[y][x].getJewel();
-        r.use(x, y, j, w);
+        r.use(x, y, w);
         //System.out.println("");
       } else {
         //System.out.print(" case indisponible");

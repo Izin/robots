@@ -3,7 +3,7 @@ package org.models;
 public class Cell {
 
   // Attributes
-  private int state    = 0;
+  private int state    = 0; // todo a virer bordel
   private Jewel jewel  = null;
   private Robot robot  = null;
   private String image = "cell";
@@ -12,12 +12,12 @@ public class Cell {
   public Cell() {}
 
   // Accessors
-  private boolean _isClean() {
-    return this.state == 0;
-  }
-
   public boolean isFree() {
     return this.robot instanceof Robot == false;
+  }
+
+  public boolean hasJewel() {
+    return this.jewel instanceof Jewel;
   }
 
   public void release() {

@@ -25,7 +25,7 @@ public abstract class Robot {
   }
 
   public void move(Controller c, World w) {}
-  public void use(int x, int y, Jewel j, World w) {}
+  public void use(int x, int y, World w) {}
   public void setDirection() {}
 
   public int getX()         { return this.x;     }

@@ -9,6 +9,7 @@ public class JewelerJumper extends Jeweler {
 
   public JewelerJumper(String ref, String name) {
     super(ref, name);
+    this.image = "jumper";
     System.out.println("Création du robot bijoutier sauteur " + name + " (" + ref + ")");
   }
 

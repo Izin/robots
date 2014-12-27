@@ -9,13 +9,13 @@ public class ThiefDrunked extends Thief {
   public ThiefDrunked() {}
   public ThiefDrunked(String ref, String name) {
     super(ref, name);
+    this.image = "drunked";
     System.out.println("Création du robot voleur saoul " + name + " (" + ref + ")");
   }
 
   @Override public void stealJewels(int x, int y, World w) {
-    if (w.map[y][x].getState() == 1) {
+    if (!w.map[y][x].hasJewel()) {
       if (this.stolen) {
-        w.map[y][x].setState(0);
         w.map[y][x].steal();
         this.stolen = false;
         //System.out.println(" -> vole les bijoux");

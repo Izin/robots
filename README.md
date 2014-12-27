@@ -8,6 +8,7 @@
 ###Changelog
 ```
 v0.8 (2014-12-27)
+ - New design
  - Working interface!
  - Refactoring (views, models)
 v0.7 (2014-12-27)

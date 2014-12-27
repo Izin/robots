@@ -9,7 +9,6 @@ public abstract class Thief extends Robot {
 
   public Thief(String ref, String name) {
     super(ref, name);
-    this.image = "thief";
   }
 
   public void stealJewels(int x, int y, World w) {}
@@ -20,7 +19,7 @@ public abstract class Thief extends Robot {
     c.moveIfPossible(x, y, this, w);
   }
 
-  @Override public void use(int x, int y, Jewel j, World w) {
+  @Override public void use(int x, int y, World w) {
     this.stealJewels(x, y, w); // todo passer les jewels en param de cette fonction ?
   }
 

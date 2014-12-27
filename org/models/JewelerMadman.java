@@ -12,6 +12,7 @@ public class JewelerMadman extends Jeweler {
 
   public JewelerMadman(String ref, String name) {
     super(ref, name);
+    this.image = "madman";
     System.out.println("Création du robot bijoutier fou " + name + " (" + ref + ")");
     this.setDirection();
   }
