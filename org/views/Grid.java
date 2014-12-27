@@ -38,7 +38,7 @@ public class Grid extends JPanel {
 
   public void drawElement(Graphics g, String img, int x, int y) {
     try {
-      Image element = ImageIO.read(getClass().getResource("../../img/test/" + img + ".png"));
+      Image element = ImageIO.read(getClass().getResource("../../img/" + img + ".png"));
       g.drawImage(element, x * this.imgDim, y * this.imgDim, this.imgDim, this.imgDim, this);
     } catch (IOException e) {
       e.printStackTrace();
