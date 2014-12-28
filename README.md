@@ -1,42 +1,66 @@
-#Robots project
+#Robots
 
-###(under construction)
+![Banner](img/v1/banner.png "Robots")
 
-![Banner](img/banner.png "Robots")
+Robots is a school project made for my fird year at EPSI Nantes.
+ It's my first Java project. The code is o  bject oriented, MVC and commented.
+ It's a classic polluter/cleaner game, without user interraction. The main
+ goal was to produce a fully functional game with different types of robots, a
+ graphic view and the better code as possible for a beginner in Java. In this
+ game, I made four different types of robots:
+
+1. **JewelerMadman**: this one drops a jewel on the current cell and moves on the borders.  
+ ![Madman](img/madman.png "Madman")
+
+2. **JewelerJumper**: this one drops a jewel on the current cell and moves like a Chess rider.  
+ ![Jumper](img/jumper.png "Jumper")
+
+3. **ThiefExpert**: this one steal the jewel he found on the cell and move on a random adjacent cell.  
+ ![Thief](img/thief.png "Thief")
+
+4. **ThiefDrunked**: because of alchool problems, this one forgets sometimes to steal the jewel.  
+ ![Thief](img/thief.png "Thief")
+
+
+###Use
+```
+git clone git@github.com:maloblanchard/robots.git
+cd robots/
+javac App.java
+java App {x-cells} {y-cells} {speed}
+#eg: java App 10 10 500
+
+```
+
+
+###Requirements
+```
+You have to get Java JDK installed to make it work.
+```
+
+###Troubleshooting
+####ERR: "main class not found"
+```
+CLASSPATH=/{absolute-path-to-the-game}/robots;
+#eg: CLASSPATH=/home/malo/robots;
+export CLASSPATH;
+```
+
+
+###Ideas, Bugs
+Don't hesitate to [contact me](http://maloblanchard.com/contact).
 
 
 ###Changelog
 ```
 v1.0 (2014-12-28)
+ - README remade + adding images for robot movement
+ - Adding a Changelog and a LICENCE file
+ - Jewel has now differents types, randomly atributed
  - Old theme is now called v0 and is on it's own folder
  - New theme for the v1
 v0.9
  - use of getCell() instead of direct access to a public property in World
  - All classes and methods are documented
  - Removing print/println from the code
-v0.8
- - Thief robots movements are now adjacent from their current cell
- - Many bugfix
- - New graphic design
- - Working interface!
- - Refactoring (views, models)
-v0.7 (2014-12-27)
- - Refactoring (better MVC, org folder)
- - Use of environment variables
- - First window made with Swing to test functionalities
-v0.6 (2014-12-22)
- - MVC architecture (folders & packages)
-v0.6 (2014-12-21)
- - JewelerJumper now works like a knight chess
-v0.5
- - Working JewelerMadman + better code + banner
-v0.4
- - Bugfix + more robots + better architecture
-v0.3
- - Implementing a timer + some bugfix
- - Little update + adding Thief robots
-v0.2
- - Some bugfix + jewelers are now able to drop jewels
-v0.1 (2014-12-19)
- - Starting project
 ```
