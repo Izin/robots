@@ -8,6 +8,7 @@
 ###Changelog
 ```
 v1.0 (2014-12-28)
+ - Old theme is now called v0 and is on it's own folder
  - New theme for the v1
 v0.9
  - use of getCell() instead of direct access to a public property in World
