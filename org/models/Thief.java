@@ -14,8 +14,21 @@ public abstract class Thief extends Robot {
   public void stealJewels(int x, int y, World w) {}
 
   @Override public void move(Controller c, World w) {
-    int x = (int) Math.abs(Math.random() * w.getWidth());
-    int y = (int) Math.abs(Math.random() * w.getHeight());
+    int x = this.x;
+    int y = this.y;
+    int r = (int) Math.abs(Math.random() * 8);
+
+    switch(r) {
+      case 0 : x--; y--; break; // top-left
+      case 1 : x--;      break; // top
+      case 2 : x--; y++; break; // top-right
+      case 3 : x++;      break; // right
+      case 4 : x--;      break; // left
+      case 5 : x++; y++; break; // bottom-right
+      case 6 : x++;      break; // bottom
+      default: x++; y--; break; // bottom-left
+    }
+
     c.moveIfPossible(x, y, this, w);
   }
 
