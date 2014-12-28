@@ -7,7 +7,9 @@
 
 ###Changelog
 ```
-v0.9 (2014-12-28)
+v1.0 (2014-12-28)
+ - New theme for the v1
+v0.9
  - use of getCell() instead of direct access to a public property in World
  - All classes and methods are documented
  - Removing print/println from the code
