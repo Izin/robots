@@ -1,6 +1,6 @@
 #Robots
 
-![Banner](img/v1/banner.png "Robots")
+![Banner](img/themes/v1/banner.png "Robots")
 
 Robots is a school project made for my fird year at EPSI Nantes.
  It's my first Java project. The code is o  bject oriented, MVC and commented.
