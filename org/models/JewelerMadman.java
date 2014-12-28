@@ -1,15 +1,26 @@
 package org.models;
-
 import org.controllers.*;
 
+
+/**
+ * A JewelerMadman is a robot that allways moves in the same direction.
+ * It can be top, left, right or bottom the current cell.
+ *
+ * @author  Malo Blanchard
+ * @version 0.9
+ * @see     Jeweler
+ */
 public class JewelerMadman extends Jeweler {
 
-  // Attributes
   private int direction = 0;
 
-  // Constructor
+  /**
+   * Build a new instance of JewelerMadman
+   *
+   * @param  ref   Robot #reference, like an id (eg: R2)
+   * @param  name  name of the robot
+   */
   public JewelerMadman() {}
-
   public JewelerMadman(String ref, String name) {
     super(ref, name);
     this.image = "madman";
@@ -17,6 +28,12 @@ public class JewelerMadman extends Jeweler {
     this.setDirection();
   }
 
+  /**
+   * Override the Jeweler move() method. Calculate coordinates.
+   *
+   * @param  c  Instance of the Controller
+   * @param  w  Instance of World model
+   */
   @Override public void move(Controller c, World w) {
     //System.out.println("Direction : " + direction);
     int x = this.x;
@@ -30,6 +47,9 @@ public class JewelerMadman extends Jeweler {
     c.moveIfPossible(x, y, this, w);
   }
 
+  /**
+   * Find a number corresponding to a global direction.
+   */
   @Override public void setDirection() {
     this.direction = (int) Math.abs(Math.random() * 4);
     //System.out.println("Direction de J1 : " + this.direction);

@@ -1,16 +1,29 @@
 package org.models;
-
 import org.controllers.*;
 
+
+/**
+ * A jewel
+ *
+ * @author  Malo Blanchard
+ * @version 0.9
+ */
 public class Jewel {
 
-  // Attributes
   protected String image = "jewel";
 
-  // Constructor
+  /**
+   * Build a new instance of Jewel
+   */
   public Jewel() {}
 
-  // Accessors
-  public String getImage()  { return this.image; }
+  /**
+   * Return a string corresponding to the image of a jewel
+   *
+   * @return  name without extention
+   */
+  public String getImage() {
+    return this.image;
+  }
 
 }

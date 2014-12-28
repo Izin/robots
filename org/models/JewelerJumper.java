@@ -1,18 +1,36 @@
 package org.models;
-
 import org.controllers.*;
 
+
+/**
+ * A JewelerJumper is a robot that moves like a Chess rider.
+ *
+ * @author  Malo Blanchard
+ * @version 0.9
+ * @see     Jeweler
+ */
 public class JewelerJumper extends Jeweler {
 
-  // Constructor
+  /**
+   * Build a new instance of JewelerJumper
+   *
+   * @param  ref   Robot #reference, like an id (eg: R2)
+   * @param  name  name of the robot
+   */
   public JewelerJumper() {}
-
   public JewelerJumper(String ref, String name) {
     super(ref, name);
     this.image = "jumper";
     System.out.println("Création du robot bijoutier sauteur " + name + " (" + ref + ")");
   }
 
+  /**
+   * Override the Jeweler move() method. Calculate coordinates regarding
+   * to a chess rider movement capabilities
+   *
+   * @param  c  Instance of the Controller
+   * @param  w  Instance of World model
+   */
   @Override public void move(Controller c, World w) {
     int x = this.x;
     int y = this.y;
