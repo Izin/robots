@@ -22,7 +22,6 @@ public class ThiefDrunked extends Thief {
   public ThiefDrunked(String ref, String name) {
     super(ref, name);
     this.image = "drunked";
-    System.out.println("Création du robot voleur saoul " + name + " (" + ref + ")");
   }
 
   /**
@@ -38,13 +37,9 @@ public class ThiefDrunked extends Thief {
       if (!this.stolen) {
         w.grid[y][x].steal();
         this.stolen = true;
-        //System.out.println(" -> vole les bijoux");
       } else {
         this.stolen = false;
-        //System.out.println(" -> ne vole pas les bijoux");
       }
-    } else {
-      //System.out.print(" -> rien à voler");
     }
   }
 

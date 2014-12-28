@@ -21,7 +21,6 @@ public class JewelerJumper extends Jeweler {
   public JewelerJumper(String ref, String name) {
     super(ref, name);
     this.image = "jumper";
-    System.out.println("Création du robot bijoutier sauteur " + name + " (" + ref + ")");
   }
 
   /**
@@ -35,7 +34,7 @@ public class JewelerJumper extends Jeweler {
     int x = this.x;
     int y = this.y;
     int r = (int) Math.abs(Math.random() * 8);
-    //System.out.println("Possibilité de 0 à 7 : : " + r);
+
     switch(r) {
       case 0 : x--;    y -= 2; break; // top-left
       case 1 : x++;    y -= 2; break; // top-right
@@ -46,6 +45,7 @@ public class JewelerJumper extends Jeweler {
       case 6 : x -= 2; y++;    break; // left-bottom
       default: x -= 2; y--;    break; // left-top
     }
+
     c.moveIfPossible(x, y, this, w);
   }
 

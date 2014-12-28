@@ -28,7 +28,6 @@ public class Timer extends Thread {
     this.speed = speed;
     this.c     = c;
     this.g     = g;
-    System.out.println("Création du timer (" + this.speed + "ms)");
   }
 
   /**

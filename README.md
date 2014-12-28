@@ -9,6 +9,7 @@
 ```
 v0.9 (2014-12-28)
  - All classes and methods are documented
+ - Removing print/println from the code
 v0.8
  - Thief robots movements are now adjacent from their current cell
  - Many bugfix

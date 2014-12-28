@@ -32,10 +32,10 @@ public class App {
     Timer      t1 = new Timer(speed, c1, g1);
 
     ArrayList<Robot> robots = new ArrayList<Robot>();
-                     robots.add(new JewelerMadman("J1", "potato"));
-                     robots.add(new JewelerJumper("J2", "banana"));
-                     //robots.add(new ThiefExpert("T3", "MichelMichel"));
-                     robots.add(new ThiefDrunked("T2", "JHackCheerAK"));
+                     robots.add(new JewelerMadman("J1", "madman"));
+                     robots.add(new JewelerJumper("J2", "jumper"));
+                     robots.add(new ThiefExpert("T3", "expert"));
+                     robots.add(new ThiefDrunked("T2", "drunked"));
 
     c1.setRobots(robots, w1);
     t1.start(w1);

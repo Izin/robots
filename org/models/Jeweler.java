@@ -32,7 +32,6 @@ public abstract class Jeweler extends Robot {
   public void dropAJewel(int x, int y, World w) {
     if (!w.grid[y][x].hasJewel()) {
       w.grid[y][x].setJewel(new Jewel());
-      //System.out.print(" -> perd des bijoux");
     }
   }
 

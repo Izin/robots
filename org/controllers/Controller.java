@@ -17,9 +17,7 @@ public class Controller {
   /**
    * Build a new instance of the Controller
    */
-  public Controller() {
-    System.out.println("Création du controlleur");
-  }
+  public Controller() {}
 
   /**
    * Automates the movements of robots and then refresh the graphic view
@@ -44,29 +42,19 @@ public class Controller {
    * @param  w  Instance of World model
    */
   public void moveIfPossible(int x, int y, Robot r, World w) {
-    //System.out.print("Tentative de déplacement de " + r.getName() + " en case [" + x + ", " + y + "] ->");
     if (w.isCell(x, y)) {
       if (w.grid[y][x].isFree()) {
         w.grid[r.getY()][r.getX()].release();
         w.grid[y][x].setRobot(r);
         r.setPosition(x, y, w);
-        //System.out.print(" case disponible");
         r.use(x, y, w);
-        //System.out.println("");
-      } else {
-        //System.out.print(" case indisponible");
-        //System.out.println("");
       }
     } else {
-      //System.out.print(" case innexistante");
-      //System.out.println("");
       if (r instanceof JewelerMadman) {
         r.setDirection();
       }
       r.move(this, w);
-      //System.out.println("");
     }
-    //System.out.println("");
   }
 
   /**

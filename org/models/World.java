@@ -22,7 +22,6 @@ public class World {
   public World() {}
   public World(int width, int height) {
     generateGrid(width, height);
-    System.out.println("Création du monde (" + width + "x" + height + ")");
   }
 
   /**
@@ -34,7 +33,6 @@ public class World {
   public void generateGrid(int width, int height) {
     this.grid = new Cell[height][width];
     if (width > 20 || height > 30) {
-      //System.out.print("La taille du tableau dépasse la limite autorisée de 20x30");
     } else {
       for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
