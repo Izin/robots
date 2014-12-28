@@ -30,8 +30,8 @@ public class ThiefExpert extends Thief {
    * @param  w  Instance of World model
    */
   @Override public void stealJewel(int x, int y, World w) {
-    if (w.grid[y][x].hasJewel()) {
-      w.grid[y][x].steal();
+    if (w.getCell(x, y).hasJewel()) {
+      w.getCell(x, y).steal();
     }
   }
 

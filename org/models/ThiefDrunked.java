@@ -33,9 +33,9 @@ public class ThiefDrunked extends Thief {
    * @param  w  Instance of World model
    */
   @Override public void stealJewel(int x, int y, World w) {
-    if (w.grid[y][x].hasJewel()) {
+    if (w.getCell(x, y).hasJewel()) {
       if (!this.stolen) {
-        w.grid[y][x].steal();
+        w.getCell(x, y).steal();
         this.stolen = true;
       } else {
         this.stolen = false;

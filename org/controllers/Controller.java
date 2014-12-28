@@ -43,9 +43,9 @@ public class Controller {
    */
   public void moveIfPossible(int x, int y, Robot r, World w) {
     if (w.isCell(x, y)) {
-      if (w.grid[y][x].isFree()) {
-        w.grid[r.getY()][r.getX()].release();
-        w.grid[y][x].setRobot(r);
+      if (w.getCell(x, y).isFree()) {
+        w.getCell(r.getX(), r.getY()).release();
+        w.getCell(x, y).setRobot(r);
         r.setPosition(x, y, w);
         r.use(x, y, w);
       }
@@ -78,7 +78,7 @@ public class Controller {
    */
   public void addRobot(Robot r, World w) {
     this.robots.add(r);
-    w.grid[r.getY()][r.getX()].setRobot(r);
+    w.getCell(r.getX(), r.getY()).setRobot(r);
   }
 
 }

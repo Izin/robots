@@ -30,8 +30,8 @@ public abstract class Jeweler extends Robot {
    * @param  w  Instance of World model
    */
   public void dropAJewel(int x, int y, World w) {
-    if (!w.grid[y][x].hasJewel()) {
-      w.grid[y][x].setJewel(new Jewel());
+    if (!w.getCell(x, y).hasJewel()) {
+      w.getCell(x, y).setJewel(new Jewel());
     }
   }
 

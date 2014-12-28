@@ -9,7 +9,7 @@ package org.models;
  */
 public class World {
 
-  public Cell[][] grid; // todo WOULALA horrible ! remplacer par un getWorld!
+  private Cell[][] grid;
   private int width;
   private int height;
 
@@ -82,6 +82,17 @@ public class World {
    */
   public int getHeight() {
     return this.height;
+  }
+
+  /**
+   * Return the right celle according to x and y parameters
+   *
+   * @param  x  First part of the cell's coordinates
+   * @param  y  Second part of the cell's coordinates
+   * @return    The correct cell
+   */
+  public Cell getCell(int x, int y) {
+    return this.grid[y][x];
   }
 
 }

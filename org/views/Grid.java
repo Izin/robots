@@ -50,7 +50,7 @@ public class Grid extends JPanel {
   public void drawCells(Graphics g) {
     for (int y = 0; y < w.getHeight(); ++y) {
       for (int x = 0; x < w.getWidth(); ++x) {
-        String img = this.w.grid[y][x].show();
+        String img = this.w.getCell(x, y).show();
         this.drawElement(g, img, x, y);
       }
     }
