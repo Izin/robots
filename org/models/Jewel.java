@@ -15,7 +15,17 @@ public class Jewel {
   /**
    * Build a new instance of Jewel
    */
-  public Jewel() {}
+  public Jewel() {
+    int r  = (int) Math.abs(Math.random() * 4);
+
+    switch(r) {
+      case 0 : this.image = "jewel0"; break;
+      case 1 : this.image = "jewel1"; break;
+      case 2 : this.image = "jewel2"; break;
+      case 3 : this.image = "jewel3"; break;
+      default: this.image = "jewel"; break;
+    }
+  }
 
   /**
    * Return a string corresponding to the image of a jewel
