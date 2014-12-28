@@ -14,7 +14,7 @@ public class ThiefDrunked extends Thief {
   }
 
   @Override public void stealJewel(int x, int y, World w) {
-    if (!w.map[y][x].hasJewel()) {
+    if (w.map[y][x].hasJewel()) {
       if (this.stolen) {
         w.map[y][x].steal();
         this.stolen = false;
