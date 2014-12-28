@@ -11,7 +11,7 @@ public abstract class Thief extends Robot {
     super(ref, name);
   }
 
-  public void stealJewels(int x, int y, World w) {}
+  public void stealJewel(int x, int y, World w) {}
 
   @Override public void move(Controller c, World w) {
     int x = this.x;
@@ -33,7 +33,7 @@ public abstract class Thief extends Robot {
   }
 
   @Override public void use(int x, int y, World w) {
-    this.stealJewels(x, y, w); // todo passer les jewels en param de cette fonction ?
+    this.stealJewel(x, y, w); // todo passer les jewels en param de cette fonction ?
   }
 
 }

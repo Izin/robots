@@ -12,10 +12,10 @@ public class ThiefExpert extends Thief {
     System.out.println("Création du robot voleur expert " + name + " (" + ref + ")");
   }
 
-  @Override public void stealJewels(int x, int y, World w) {
-    if (!w.map[y][x].hasJewel()) {
+  @Override public void stealJewel(int x, int y, World w) {
+    if (w.map[y][x].hasJewel()) {
       w.map[y][x].steal();
-      //System.out.println(" -> vole les bijoux");
+      System.out.println(" -> vole les bijoux");
     } else {
       //System.out.print(" -> rien à voler");
     }

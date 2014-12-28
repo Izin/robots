@@ -13,7 +13,7 @@ public class ThiefDrunked extends Thief {
     System.out.println("Création du robot voleur saoul " + name + " (" + ref + ")");
   }
 
-  @Override public void stealJewels(int x, int y, World w) {
+  @Override public void stealJewel(int x, int y, World w) {
     if (!w.map[y][x].hasJewel()) {
       if (this.stolen) {
         w.map[y][x].steal();
