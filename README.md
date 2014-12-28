@@ -54,6 +54,7 @@ Don't hesitate to [contact me](http://maloblanchard.com/contact).
 ###Changelog
 ```
 v1.0 (2014-12-28)
+ - New banner
  - README remade + adding images for robot movement
  - Adding a Changelog and a LICENCE file
  - Jewel has now differents types, randomly atributed
