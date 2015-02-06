@@ -34,9 +34,8 @@ java App {x-cells} {y-cells} {speed}
 
 
 ###Requirements
-```
-You have to get Java JDK installed to make it work.
-```
+Java JDK correctly installed.
+
 
 ###Troubleshooting
 ####ERR: "main class not found"
