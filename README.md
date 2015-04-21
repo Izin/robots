@@ -46,10 +46,6 @@ export CLASSPATH;
 ```
 
 
-###Ideas, Bugs
-Don't hesitate to [contact me](http://maloblanchard.com/contact).
-
-
 ###Changelog
 ```
 v1.0 (2014-12-28)
