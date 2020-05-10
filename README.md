@@ -1,4 +1,4 @@
-#Robots
+# Robots
 
 ![Banner](img/themes/v1/banner.png "Robots")
 
@@ -22,7 +22,7 @@ Robots is a school project made for my fird year at EPSI Nantes.
  ![Thief](img/thief.png "Thief")
 
 
-###Use
+### Use
 ```
 git clone git@github.com:maloblanchard/robots.git
 cd robots/
@@ -33,12 +33,12 @@ java App {x-cells} {y-cells} {speed}
 ```
 
 
-###Requirements
+### Requirements
 Java JDK correctly installed.
 
 
-###Troubleshooting
-####ERR: "main class not found"
+### Troubleshooting
+#### ERR: "main class not found"
 ```
 CLASSPATH=/{absolute-path-to-the-game}/robots;
 #eg: CLASSPATH=/home/malo/robots;
@@ -46,7 +46,7 @@ export CLASSPATH;
 ```
 
 
-###Changelog
+### Changelog
 ```
 v1.0 (2014-12-28)
  - New banner
